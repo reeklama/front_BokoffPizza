@@ -1,0 +1,85 @@
+.list-content {
+    padding-bottom: 5px;
+}
+
+.userpage-link{
+    margin-left: 300px;
+    margin-top: 5px;
+}
+
+.search{
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    justify-content: center;
+    font-family: Bahnschrift;
+}
+
+.search_h{
+    font-size: 20px;
+    align-self: center;
+    margin-right: 5px;
+}
+
+.search_line{
+    height: 46px;
+    width: 1040px;
+    border: 2px solid rgb(195, 192, 192);
+    padding-left: 40px;
+    font-family: Bahnschrift;
+}
+
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    
+    justify-content: space-between;
+    height: 100%;
+    width: 80%;
+    border: 1px, black;
+    margin: 10%;
+    margin-top: 5%;
+}
+
+.product{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    border: 2px, black;
+}
+
+.product-name {
+    font-family: Bahnschrift;
+    font-size: 18px;
+    align-self: flex-start;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.picture-product{
+    background-color: darkgray;
+    width: 300px;
+    height: 200px;
+    align-self: center;
+}
+.add-to-purchase {
+    display: flex;
+    justify-content: space-between;
+}
+.add-to-purchase-btn{
+    width: 200px;
+    height: 30px;
+    font-family: Bahnschrift;
+	font-size: 18px;
+    align-self: center;
+    background-color: rgb(244,192,93);
+    
+}
+
+.price{
+    margin-top: 10px;
+    width: 100px;
+    height: 30px;
+    font-family: Bahnschrift;
+	font-size: 20px;
+	text-align: center;
+}

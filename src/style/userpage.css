@@ -1,0 +1,52 @@
+.avatar{
+    border-radius: 10px;
+}
+.container_inner2{
+	display: flex;
+    flex-direction: row;
+	text-align: center;
+	justify-content:flex-start;
+	padding: 20px;
+}
+
+.font_inner2{
+    font-family: Bahnschrift;
+	font-size: 24px;
+    margin-right: 5px;
+}
+
+.field_inner2{
+    border: 2px rgb(246,241,231);
+	background-color: rgb(246,241,231);
+	font-family: Bahnschrift;
+	font-size: 20px;
+	text-align: center;
+    margin-right: 10px;
+}
+
+.data{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+.userpage-fonheader{
+	background-color: rgb(244,192,93);
+}
+.container{
+	padding: 2px;
+}
+
+.userpage-header {
+	background-size: 25px;
+	font-family: IBM Plex Serif;
+	font-size: 64px;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	color: rgb(0, 0, 0);
+    margin-left: 15%;
+}
+
+.button_in2{
+	font-family: Bahnschrift;
+}
