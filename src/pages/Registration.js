@@ -1,15 +1,16 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HeadMain from "../components/Head";
-import M from "../components/M";
+import RegForm from "../components/RegForm";
 
-function Menu() {
+function Registration() {
+
     return (
         <div className="wrapper">
             <HeadMain />
-            <M/>
+            <RegForm />
         </div>
     );
 }
 
-export default Menu;
+export default Registration;

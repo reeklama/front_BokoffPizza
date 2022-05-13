@@ -1,15 +1,16 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HeadMain from "../components/Head";
-import M from "../components/M";
+import LogForm from "../components/LogForm";
 
-function Menu() {
+function Auth() {
     return (
         <div className="wrapper">
             <HeadMain />
-            <M/>
+            <LogForm/>
+
         </div>
     );
 }
 
-export default Menu;
+export default Auth;

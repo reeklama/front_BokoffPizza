@@ -1,26 +1,37 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import logo from "../resources/img/logo.png";
 import userCab from "../resources/img/user.svg";
+import {AuthContext} from "../context";
+import {Link} from "react-router-dom";
+
 
 const Head = (props) => {
 
+    const {isAuth, setIsAuth} = useContext(AuthContext)
+
+    const logout = () => {
+        setIsAuth(false);
+        localStorage.removeItem('auth')
+    }
+
+
     return (
+
         <header className="userpage-fonheader">
             <div className="container">
-                <a href="/">
+                <Link to="/menu">
                     <img src={logo} width="75" height="75" alt="Пример"/>
-                </a>
+                </Link>
+
                 <h1 className="userpage-header">BOKOFF PIZZA</h1>
                     <div className="container2">
-                        <a className="ccacacaca">user.name</a>
-                        <a className="ccacacaca" href="/login">Войти</a>
-                        <a className="ccacacaca" href="/registration">Зарегистрироваться</a>
-                        <a className="ccacacaca" href="/logout">Выйти</a>
+                        <Link  className="ccacacaca" to="/login">Войти</Link>
+                        <Link  className="ccacacaca" to="/registration">Зарегистрироваться</Link>
                     </div>
 
-                    <a href="/" className="userpage-link">
-                        <img src={userCab} width="65" height="65" alt=""/>
-                    </a>
+                <Link to="/lc" className="userpage-link">
+                    <img src={userCab} width="65" height="65" alt=""/>
+                </Link>
             </div>
         </header>
     );
