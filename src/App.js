@@ -2,34 +2,23 @@ import React from 'react';
 import './style/App.css';
 import './style/userpage.css';
 import './style/listpage.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Menu  from "./pages/Menu";
+import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 
-import logo from './resources/img/logo.png';
-import user from './resources/img/user.svg';
-import Menu from "./components/Menu";
-import axios from "axios";
-import M from "./components/M";
 
-import HeadMain from "./components/Head"
-import { Home, Cart } from './pages';
-import { BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
-
-function App() {
-
+export const App = () => {
     return (
-
-        <div className="wrapper">
-            <HeadMain />
-
-            <div className="content">
-                <M/>
-
-            </div>
-        </div>
-
+        <>
+            <Router>
+                <Routes>
+                    <Route exact path="/menu" element={<Menu />} />
+                </Routes>
+            </Router>
+        </>
     );
 }
 
-export default App;
 
 
 

@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import PizzaBlock from "./PizzaBlock/PizzaBlock";
-import Button from "./Button";
 
 const MPizzaBlock = (props) => {
 
@@ -44,7 +42,7 @@ const MPizzaBlock = (props) => {
     );
 };
 
-PizzaBlock.propTypes = {
+MPizzaBlock.propTypes = {
     name: PropTypes.string,
     pictureURL: PropTypes.string,
     price: PropTypes.number,
@@ -54,7 +52,7 @@ PizzaBlock.propTypes = {
     addedCount: PropTypes.number,
 };
 
-PizzaBlock.defaultProps = {
+MPizzaBlock.defaultProps = {
     name: '---',
     price: 0,
     types: [],

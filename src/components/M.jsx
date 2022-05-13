@@ -1,7 +1,5 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import logo from "../resources/img/logo.png";
-import Image from "./Image";
-import Button from "./Button";
 import MPizzaBlock from "./MPizzaBlock";
 import axios from "axios";
 
@@ -18,7 +16,7 @@ const M = () => {
                     name: res.data.name,
                     pictureURL: res.data.url,
                     products: res.data.products,
-                    dishSizes: res.data.dishSizes[]
+                    dishSizes: res.data.dishSizes
                 };
                 theArray.push(newItem);
             })
@@ -112,7 +110,7 @@ const M = () => {
 
         <div>
 
-            <div>{carNode()}</div>
+
 
             <section className="search">
                 <h3 className="search_h">Поиск: </h3>
@@ -124,22 +122,7 @@ const M = () => {
 
                 <MPizzaBlock id='1' name="Mexicana" pictureURL="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Kotipizza_Mexicana.jpg/800px-Kotipizza_Mexicana.jpg"
                              price="900" types="Big" sizes="bigbig" onClickAddPizza={handleAddPizzaToCart} count='0'/>
-                <MPizzaBlock id='1' name="Mexicana" pictureURL="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Kotipizza_Mexicana.jpg/800px-Kotipizza_Mexicana.jpg"
-                             price="900" types="Big" sizes="bigbig" onClickAddPizza={handleAddPizzaToCart} count='0' />
-                <MPizzaBlock id='1' name="Mexicana" pictureURL="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Kotipizza_Mexicana.jpg/800px-Kotipizza_Mexicana.jpg"
-                             price="900" types="Big" sizes="bigbig" onClickAddPizza={handleAddPizzaToCart} count='0' />
-                <MPizzaBlock id='1' name="Mexicana" pictureURL="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Kotipizza_Mexicana.jpg/800px-Kotipizza_Mexicana.jpg"
-                             price="900" types="Big" sizes="bigbig" onClickAddPizza={handleAddPizzaToCart} count='0' />
-                <MPizzaBlock id='1' name="Mexicana" pictureURL="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Kotipizza_Mexicana.jpg/800px-Kotipizza_Mexicana.jpg"
-                             price="900" types="Big" sizes="bigbig" onClickAddPizza={handleAddPizzaToCart} count='0' />
-                <MPizzaBlock id='1' name="Mexicana" pictureURL="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Kotipizza_Mexicana.jpg/800px-Kotipizza_Mexicana.jpg"
-                             price="900" types="Big" sizes="bigbig" onClickAddPizza={handleAddPizzaToCart} count='0'/>
-                <MPizzaBlock id='1' name="Mexicana" pictureURL="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Kotipizza_Mexicana.jpg/800px-Kotipizza_Mexicana.jpg"
-                             price="900" types="Big" sizes="bigbig" onClickAddPizza={handleAddPizzaToCart} count='0'/>
-                <MPizzaBlock id='1' name="Mexicana" pictureURL="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Kotipizza_Mexicana.jpg/800px-Kotipizza_Mexicana.jpg"
-                             price="900" types="Big" sizes="bigbig" onClickAddPizza={handleAddPizzaToCart} count='0'/>
-                <MPizzaBlock id='1' name="Mexicana" pictureURL="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Kotipizza_Mexicana.jpg/800px-Kotipizza_Mexicana.jpg"
-                             price="900" types="Big" sizes="bigbig" onClickAddPizza={handleAddPizzaToCart} count='0'/>
+
 
             </section>
 
