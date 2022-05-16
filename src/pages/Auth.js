@@ -8,7 +8,6 @@ function Auth() {
         <div className="wrapper">
             <HeadMain />
             <LogForm/>
-
         </div>
     );
 }

@@ -5,31 +5,31 @@ import {Link, useHistory} from "react-router-dom";
 
 const LogForm = () => {
 
-    const [email, setEmail] = useState('')
+    const [mail, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
     async function loginUser(event) {
         event.preventDefault()
 
-        const response = await fetch('http://localhost:1337/api/login', {
+        const response = await fetch('http://localhost:8080/api/v1/auth/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                email,
+                mail,
                 password,
             }),
         })
 
         const data = await response.json()
-
-        if (data.user) {
-            localStorage.setItem('token', data.user)
+        console.log(data.token)
+        if (data) {
+            localStorage.setItem('token', data.token)
             alert('Login successful')
             window.location.href = '/menu'
             console.log({
-                email: data.get('email'),
+                mail: data.get('mail'),
                 password: data.get('password'),
             });
         } else {
@@ -50,7 +50,7 @@ const LogForm = () => {
                     <div className="container_inner">
                         <p className="font_inner">Почта:</p>
                         <input name="mail" className="field_inner" type="text" size="15" placeholder="Email"
-                               autoFocus="true" value={email}
+                               autoFocus="true" value={mail}
                                onChange={(e) => setEmail(e.target.value)}/>
                     </div>
                     <div className="container_inner">
