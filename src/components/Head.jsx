@@ -30,9 +30,7 @@ const Head = (props) => {
                     <div className="container3">
                         <div>
                             <h1>{localStorage.getItem('email')}</h1>
-                            <button className="button" onClick={logout}>
-                                Выйти
-                            </button>
+                            <button className="button_header" onClick={logout}>Выйти</button>
                         </div>
                         <Link to="/lc" className="userpage-link">
                             <img src={userCab} width="65" height="65" alt=""/>
@@ -40,8 +38,8 @@ const Head = (props) => {
                     </div>
                     :
                     <div className="container2">
-                        <Link className="ccacacaca" to="/login">Войти</Link>
-                        <Link className="ccacacaca" to="/registration">Зарегистрироваться</Link>
+                        <Link className="button_header" to="/login">Войти</Link>
+                        <Link className="button_header" to="/registration">Зарегистрироваться</Link>
                     </div>
                 }
             </div>

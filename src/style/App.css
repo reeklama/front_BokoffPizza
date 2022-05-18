@@ -145,7 +145,15 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     font-size: 20px;
     text-align: center;
 }
-
+.button_header{
+    color: black;
+    border: 2px solid black;
+    background-color: rgb(244,192,93);
+    font-family: Bahnschrift, serif;
+    font-size: 14px;
+    text-align: center;
+    padding: 2px 5px 2px 5px;
+}
 .button_in{
 
     border: 2px rgb(244,192,93);
