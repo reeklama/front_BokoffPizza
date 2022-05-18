@@ -4,8 +4,6 @@ import ShopCart from "../components/ShopCart";
 
 const ShoppingCart = (props) => {
 
-
-
     if (props.arr === null || props.arr.length === 0){
         console.log(props);
         return (
@@ -20,8 +18,8 @@ const ShoppingCart = (props) => {
     return (
         <div>
             <HeadMain/>
-            <ShopCart/>
-            <div>{props.arr[0].name}</div>
+            <ShopCart />
+            <div>{props.arr[0].price}</div>
         </div>
     );
 };

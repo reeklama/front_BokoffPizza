@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import BasketContext from "../App";
+import trash from "../resources/img/trash.png";
+import {Link} from "react-router-dom";
 
 const MPizzaBlock = (props) => {
 
@@ -11,32 +13,40 @@ const MPizzaBlock = (props) => {
         sizes: props.sizes
     };
 
+    const [ but, setBut ] = useState("Добавить в корзину");
+
+
 
     const handleAddPizzaToCart2 = () => {
-        props.handleAddPizzaToCart2(obj);
-    };
+        if (but === "Добавить в корзину") {
+            props.handleAddPizzaToCart2(obj, "add");
+            setBut("Убрать из корзины")
+        } else {
+            props.handleAddPizzaToCart2(obj, "remove")
+            setBut("Добавить в корзину")
+        }
+    }
+
+
 
     return (
 
                 <div className="product">
-                    <div className="picture-product">
+                    <Link to="/dish" state={ {obj} } className="picture-product">
                         <img src={props.pictureURL} width="300" height="200" alt="Пример"/>
-                    </div>
+                    </Link>
+
                     <p className="product-name">{props.name}</p>
+                    <div>{
+                        props.sizes.map((item) =>
+                            <div>
+                                {item.size} {item.price}
+                            </div>
+                        )
+                    }</div>
                     <div onClick={handleAddPizzaToCart2} className="add-to-purchase">
                         <button className="add-to-purchase-btn">
-                            <svg
-                                width="12"
-                                height="12"
-                                viewBox="0 0 12 12"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M10.8 4.8H7.2V1.2C7.2 0.5373 6.6627 0 6 0C5.3373 0 4.8 0.5373 4.8 1.2V4.8H1.2C0.5373 4.8 0 5.3373 0 6C0 6.6627 0.5373 7.2 1.2 7.2H4.8V10.8C4.8 11.4627 5.3373 12 6 12C6.6627 12 7.2 11.4627 7.2 10.8V7.2H10.8C11.4627 7.2 12 6.6627 12 6C12 5.3373 11.4627 4.8 10.8 4.8Z"
-                                    fill="white"
-                                />
-                            </svg>
-                            <span>Добавить в корзину</span>
+                            <span>{but}</span>
                         </button>
                         <p className="price">0 рублей</p>
                     </div>

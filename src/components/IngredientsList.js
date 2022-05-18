@@ -1,9 +1,29 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
+import {wait} from "@testing-library/user-event/dist/utils";
+import axios from "axios";
+import MPizzaBlock from "./MPizzaBlock";
 
-const IngredientsList = () => {
+const IngredientsList = (props) => {
 
     const [checked, setChecked] = useState([]);
-    const checkList = ["Колбаса", "Сир", "Укроп", "Мама", "Лох", "Жопа", "Папа", "Ээээ"];
+
+    const [checkList, setCheckList] = useState([])
+
+    const returnValue = () => {
+        props.confirmIngr(checked)
+    }
+
+
+    async function fetchDishes(){
+        const response = await axios.get("http://localhost:8080/Product")
+        setCheckList(response.data)
+    }
+
+    useEffect(()=>{
+        fetchDishes()
+    }, [])
+
+
 
     const handleCheck = (event) => {
         var updatedList = [...checked];
@@ -29,18 +49,21 @@ const IngredientsList = () => {
             <br />
             <div className="checkList">
                 <div className="list-container-ing">
-                    {checkList.map((item, index) => (
-                        <div key={index}>
-                            <input value={item} type="checkbox" onChange={handleCheck} />
-                            <span className={isChecked(item)}>{item}</span>
-                        </div>
-                    ))}
+                    {
+                        checkList.map((dish, index) =>
+                            <div key={index}>
+                                <input value={dish.name} type="checkbox" onChange={handleCheck} />
+                                <span className={isChecked(dish.name)}>{dish.name}</span>
+                            </div>
+                        )
+                    }
                 </div>
         </div>
             <br />
             <div>
                 {`Вы выбрали: ${checkedItems}`}
             </div>
+            <button onClick={returnValue}>Подтвердить</button>
         </div>
 
     );

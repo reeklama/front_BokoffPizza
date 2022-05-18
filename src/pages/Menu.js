@@ -5,8 +5,8 @@ import M from "../components/M";
 
 function Menu(props) {
 
-    const handleAddPizzaToCart2  = (obj) => {
-        props.handleAddPizzaToCart2(obj);
+    const handleAddPizzaToCart2  = (obj, str) => {
+        props.handleAddPizzaToCart2(obj, str);
     }
 
     return (

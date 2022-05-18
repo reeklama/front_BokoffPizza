@@ -11,6 +11,7 @@ import Thanks  from "./pages/Thanks";
 import Admin from "./pages/Admin";
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 import {AuthContext} from "./context";
+import Dish from "./pages/Dish";
 
 
 export const App = () => {
@@ -23,8 +24,12 @@ export const App = () => {
     }, [])
 
     let pizzas = [];
-    const handleAddPizzaToCart2  = (obj) => {
-        pizzas.push(obj);
+    const handleAddPizzaToCart2  = (obj, str) => {
+        if (str === "add"){
+            pizzas.push(obj);
+        } else {
+            pizzas.pop(obj)
+        }
     }
 
 
@@ -39,9 +44,10 @@ export const App = () => {
                         <Route exact path="/menu" element={<Menu handleAddPizzaToCart2={handleAddPizzaToCart2}/>} />
                         <Route exact path="/login" element={<Auth />} />
                         <Route exact path="/registration" element={<Reg />} />
-                        <Route exact path="/shoppingcart" element={<ShoppingCart arr={pizzas}/>} />
+                        <Route exact path="/shoppingcart" element={<ShoppingCart arr={pizzas} />} />
                         <Route exact path="/thanks" element={<Thanks />} />
                         <Route exact path="/admin" element={<Admin />} />
+                        <Route exact path="/dish" element={<Dish />} />
                     </Routes>
                 </Router>
             </AuthContext.Provider>

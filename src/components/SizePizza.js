@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 const SizePizza = () => {
 
     const [checked, setChecked] = useState([]);
-    const checkList = ["23", "30", "36"];
+    const checkList = ["23", "30", "35"];
 
     const handleCheck = (event) => {
         var updatedList = [...checked];

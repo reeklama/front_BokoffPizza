@@ -1,52 +1,354 @@
 .avatar{
-    border-radius: 10px;
+	border-radius: 10px;
 }
 .container_inner2{
 	display: flex;
-    flex-direction: row;
+	flex-direction: row;
 	text-align: center;
 	justify-content:flex-start;
 	padding: 20px;
 }
 
 .font_inner2{
-    font-family: Bahnschrift;
+	font-family: Bahnschrift, serif;
 	font-size: 24px;
-    margin-right: 5px;
+	margin-right: 5px;
 }
 
 .field_inner2{
-    border: 2px rgb(246,241,231);
+	border: 2px rgb(246,241,231);
 	background-color: rgb(246,241,231);
-	font-family: Bahnschrift;
+	font-family: Bahnschrift, serif;
 	font-size: 20px;
 	text-align: center;
-    margin-right: 10px;
+	margin-right: 10px;
 }
 
 .data{
-    display: flex;
-    flex-direction: column;
-    align-items:center;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 }
+
 .userpage-fonheader{
 	background-color: rgb(244,192,93);
 }
+
 .container{
 	padding: 2px;
 }
 
 .userpage-header {
 	background-size: 25px;
-	font-family: IBM Plex Serif;
+	font-family: IBM Plex, serif;
 	font-size: 64px;
 	text-align: center;
 	text-transform: uppercase;
 	letter-spacing: 3px;
 	color: rgb(0, 0, 0);
-    margin-left: 15%;
+	margin-left: 15%;
 }
 
 .button_in2{
-	font-family: Bahnschrift;
+	font-family: Bahnschrift, serif;
 }
+
+.span {
+	padding-left: 100px;
+	padding-right: 0px;
+	padding-top: 22px;
+	padding-bottom: 0px;
+}
+
+.countadd {
+	display:flex;
+	flex-direction: row;
+	align-items: baseline;
+	justify-content: space-around;
+	flex: 1 1 100px;
+	position: absolute;
+	top: 300px;
+}
+
+.outer{
+	width: 480px;
+}
+
+.number {
+	user-select: none;
+	position: relative;
+	text-align: left;
+	left: 41px;
+	padding: 0;
+	width: 100px;
+	border: solid 1px #000;
+	display: inline-block;
+}
+
+.number-minus, .number-plus {
+	position: absolute;
+	top: 0;
+	width: 45px;
+	height: 22px;
+	line-height: 45px;
+	display: block;
+	background: #fff;
+	font-size: 17px;
+	font-weight: 600;
+	text-align: center;
+	font-family: Bahnschrift, serif;
+	color: rgb(144,144,144);
+	text-decoration: none;
+}
+
+.number-minus {
+	left: 0;
+	border-right: 1px solid #fff;
+}
+
+.number-plus {
+	right: 0;
+	border-left: 1px solid #fff;
+}
+
+.number-minus:hover, .number-plus:hover {
+	background: #fff;
+}
+
+.number-minus:active, .number-plus:active {
+	background: #fff;
+}
+
+.number-text{
+	display: inline-block;
+	font-size: 19px;
+	font-family: Bahnschrift, serif;
+	color: #000;
+	line-height: 30px;
+	height: 43px;
+	padding: 0 0 0 45px;
+	margin: auto;
+	background: #fff;
+	outline: none;
+	border: none;
+	width: 50px;
+}
+
+.backbutton {
+	font-size: 17px;
+	color: rgb(0, 0, 0);
+	font-family: Bahnschrift, serif;
+}
+
+.span2 {
+	padding-left: 0px;
+	padding-right: 400px;
+	padding-top: 0px;
+}
+
+.data{
+	display: flex;
+	flex-direction: column;
+	align-items:center;
+}
+
+.span3 {
+	padding-left: 900px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+
+}
+
+.span4 {
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 120px;
+	padding-bottom: 0px;
+}
+
+.span5 {
+	padding-left: 0px;
+	padding-right: 80px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.name {
+	font-size: 44px;
+	text-align: justify;
+	font-weight: bold;
+	color: rgb(0, 0, 0);
+	font-family: Bahnschrift, serif;
+}
+
+.cost {
+	text-align: justify;
+	font-size: 28px;
+	color: rgb(144,144,144);
+	font-family: Bahnschrift, serif;
+}
+
+.info {
+	font-size: 17px;
+	color: rgb(144,144,144);
+	font-family: Bahnschrift, serif;
+}
+
+.detailed {
+	font-size: 17px;
+	font-weight: bold;
+	color: rgb(0, 0, 0);
+	font-family: Bahnschrift, serif;
+}
+
+ul {
+	list-style:none;
+	font-size: 0;
+}
+
+label {
+	display:inline-block;
+	width:150px;
+	height:40px;
+	text-align:center;
+	color: rgb(144,144,144);
+	font: 20px/40px Bahnschrift;
+	font-weight:normal;
+	border: solid 1px rgb(144,144,144);}input:checked~label {background:rgb(244,192,93);color:#000}
+input[type="radio"]{display:none;}
+
+.button_add{
+	border: none;
+	background-color: rgb(244,192,93);
+	font-family: Bahnschrift, serif;
+	font-size: 20px;
+	text-align: center;
+	padding-left: 70px;
+	padding-right: 70px;
+	padding-top: 11px;
+	padding-bottom: 11px;
+	position:relative;
+	left: 13px;
+}
+
+.yourorder {
+	font-family: Bahnschrift, serif;
+	font-size: 66px;
+	text-align: left;
+	padding-top: 58px;
+	padding-left: 200px;
+}
+
+.priseonshopcart {
+	font-family: Bahnschrift, serif;
+	font-size: 17px;
+	text-align: right;
+	padding-top: 0px;
+	padding-left: 0px;
+}
+
+.block {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 770px;
+	padding-left: 160px;
+
+}
+
+.product-name {
+	font-family: Bahnschrift, serif;
+	font-size: 17px;
+	align-self: flex-start;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+hr {
+	margin: 1px 200px;
+}
+
+.infoblock {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 750px;
+	padding-left: 1400px;
+	position: absolute;
+	bottom: 10px;
+}
+
+.shopcart {
+	display: flex;
+}
+
+.container_inner3{
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+	justify-content: end;
+	padding-bottom: 0px;
+	padding-top: 42px;
+}
+
+.field_inner3{
+	border: 1px solid black;
+	background-color: white;
+	font-family: Bahnschrift, serif;
+	font-size: 17px;
+	text-align: center;
+	margin-right: 10px;
+}
+
+.font_inner3{
+	font-family: Bahnschrift, serif;
+	font-size: 17px;
+	text-align: center;
+	margin-right: 100px;
+	white-space: nowrap;
+}
+
+.button_order{
+	border: none;
+	background-color: rgb(244,192,93);
+	font-family: Bahnschrift, serif;
+	font-size: 20px;
+	text-align: center;
+	padding-left: 170px;
+	padding-right: 170px;
+	padding-top: 11px;
+	padding-bottom: 11px;
+	position:relative;
+	right: 550px;
+}
+
+label2 {
+	display:inline-block;
+	width: 40px;
+	height: 20px;
+	text-align: center;
+	color: rgb(144,144,144);
+	font: 10px/20px Bahnschrift, serif;
+	font-weight: normal;
+	border: solid 1px rgb(144,144,144);}input:checked~label2 {background:rgb(244,192,93);color:#000}input[type="radio"]
+																									{display:none;}
+
+.thanks{
+	font-family: Bahnschrift, serif;
+	font-size: 50px;
+	text-align: center;
+	font-weight: bold;
+	padding-top: 200px;
+	margin-right: 5px;
+}
+
+.ordertext{
+	font-family: Bahnschrift, serif;
+	font-size: 20px;
+	text-align: center;
+	color: rgb(144,144,144);
+	padding-top: 50px;
+	margin-right: 5px;
+}
+
