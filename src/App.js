@@ -11,6 +11,7 @@ import Thanks  from "./pages/Thanks";
 import Admin from "./pages/Admin";
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 import {AuthContext} from "./context";
+import Personal from "./pages/Personal";
 
 
 export const App = () => {
@@ -42,6 +43,7 @@ export const App = () => {
                         <Route exact path="/shoppingcart" element={<ShoppingCart arr={pizzas}/>} />
                         <Route exact path="/thanks" element={<Thanks />} />
                         <Route exact path="/admin" element={<Admin />} />
+                        <Route exact path="/lc" element={<Personal />} />
                     </Routes>
                 </Router>
             </AuthContext.Provider>

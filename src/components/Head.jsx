@@ -12,6 +12,8 @@ const Head = (props) => {
     const logout = () => {
         setIsAuth(false);
         localStorage.removeItem('auth')
+        localStorage.setItem('auth', false)
+        localStorage.removeItem('email')
     }
 
 
@@ -24,14 +26,24 @@ const Head = (props) => {
                 </Link>
 
                 <h1 className="userpage-header">BOKOFF PIZZA</h1>
-                    <div className="container2">
-                        <Link  className="ccacacaca" to="/login">Войти</Link>
-                        <Link  className="ccacacaca" to="/registration">Зарегистрироваться</Link>
+                {isAuth ?
+                    <div className="container3">
+                        <div>
+                            <h1>{localStorage.getItem('email')}</h1>
+                            <button className="button" onClick={logout}>
+                                Выйти
+                            </button>
+                        </div>
+                        <Link to="/lc" className="userpage-link">
+                            <img src={userCab} width="65" height="65" alt=""/>
+                        </Link>
                     </div>
-
-                <Link to="/lc" className="userpage-link">
-                    <img src={userCab} width="65" height="65" alt=""/>
-                </Link>
+                    :
+                    <div className="container2">
+                        <Link className="ccacacaca" to="/login">Войти</Link>
+                        <Link className="ccacacaca" to="/registration">Зарегистрироваться</Link>
+                    </div>
+                }
             </div>
         </header>
     );

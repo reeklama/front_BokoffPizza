@@ -26,6 +26,8 @@ const LogForm = () => {
         console.log(data.token)
         if (data) {
             localStorage.setItem('token', data.token)
+            localStorage.setItem('auth', true)
+            localStorage.setItem('email', mail)
             alert('Login successful')
             window.location.href = '/menu'
             console.log({
