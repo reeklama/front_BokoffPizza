@@ -50,3 +50,56 @@
 .button_in2{
 	font-family: Bahnschrift;
 }
+
+.order{
+	border: 5px rgb(244,192,93);
+	display: flex;
+	justify-content: space-between;
+}
+
+.order-list{
+	border: 2px solid black;
+	background-color: rgb(255, 222, 148);
+	padding: 20px;
+	width: 80%;
+	alignment: center;
+	margin: 20px auto auto;
+}
+
+.d{
+	alignment: center;
+	padding-bottom: 25px;
+}
+.orders-container{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	justify-content: center;
+}
+
+.dishes-container{
+	display: flex;
+	flex-direction: column;
+	text-align: right;
+	width: 50%;
+}
+
+.order-text{
+	font-family: Bahnschrift, serif;
+	font-size: 16px;
+}
+.order-text-id {
+	width: 10%;
+}
+.order-text-date{
+	width: 30%;
+	text-align: center;
+}
+h-line {
+	display: block;
+	height: 2px;
+	border: 0;
+	border-top: 1px solid #000;
+	margin: 1em 0;
+	padding: 0;
+}
