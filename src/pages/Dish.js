@@ -13,7 +13,7 @@ const Dish = () => {
         <div>
             <Head/>
             <Backbutton/>
-            <ImagePizza/>
+            <ImagePizza obj={obj}/>
         </div>
     );
 };

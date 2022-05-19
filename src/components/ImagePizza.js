@@ -3,11 +3,11 @@ import image from '../resources/img/pizza.jpg';
 import '../style/userpage.css';
 //import '../js/jq';
 
-const ImagePizza = () => {
+const ImagePizza = (props) => {
     return (
         <div className="data">
             <div className="span2">
-                <img src={image} width="695" height="704" align="left"/>
+                <img src={props.obj.pictureURL} width="695" height="704" align="left"/>
             </div>
             <div className="countadd">
                 <div className="span3">

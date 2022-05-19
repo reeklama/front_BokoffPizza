@@ -9,8 +9,8 @@ const MPizzaBlock = (props) => {
         id : props.id,
         name : props.name,
         pictureURL: props.pictureURL,
-        price: props.price,
-        sizes: props.sizes
+        products: props.products,
+        dishSizeModels: props.dishSizeModels
     };
 
     const [ but, setBut ] = useState("Добавить в корзину");
@@ -38,7 +38,7 @@ const MPizzaBlock = (props) => {
 
                     <p className="product-name">{props.name}</p>
                     <div>{
-                        props.sizes.map((item) =>
+                        props.dishSizeModels.map((item) =>
                             <div>
                                 {item.size} {item.price}
                             </div>

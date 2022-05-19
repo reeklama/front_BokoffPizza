@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 
-const SizePizza = () => {
+const SizePizza = (props) => {
 
     const [checked, setChecked] = useState([]);
     const checkList = ["23", "30", "35"];
@@ -19,6 +19,10 @@ const SizePizza = () => {
     var isChecked = (item) =>
         checked.includes(item) ? "checked-item" : "not-checked-item";
 
+    const returnValue = () => {
+        props.confirmSize(checked)
+    }
+
     return (
             <div className="checkList">
                 <div className="list-container-size">
@@ -29,7 +33,8 @@ const SizePizza = () => {
                         </div>
                     ))}
                 </div>
-        </div>
+                <button onClick={returnValue}>Подтвердить</button>
+            </div>
     );
 };
 
