@@ -4,6 +4,8 @@ import {wait} from "@testing-library/user-event/dist/utils";
 
 const AddIngredient = () => {
 
+    let token = localStorage.getItem('token')
+
     const [name, setName] = useState('')
     const [but, setBut] = useState('Добавить')
 
@@ -14,7 +16,8 @@ const AddIngredient = () => {
         const response = await fetch('http://localhost:8080/Product', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
+                Authorization: token,
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 name

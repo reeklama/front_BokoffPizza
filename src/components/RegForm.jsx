@@ -13,7 +13,7 @@ const RegForm = () => {
     async function registerUser(event) {
         event.preventDefault()
 
-        const response = await fetch('http://localhost:8080/api/v1/registration', {
+        const response = await fetch('http://localhost:8080/registration', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

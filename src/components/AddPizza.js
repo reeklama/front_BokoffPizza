@@ -5,9 +5,11 @@ import SizePizza from "./SizePizza";
 
 const AddPizza = () => {
 
+    let token = localStorage.getItem('token')
+
     const [name, setName] = useState('')
     const [pictureURL, setUrl] = useState('')
-    const [productsModels, setProd] = useState([])
+    const [productModels, setProd] = useState([])
     const [dishSizeModels, setSize] = useState([])
 
 
@@ -21,12 +23,13 @@ const AddPizza = () => {
         const response = await fetch("http://localhost:8080/menu", {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
+                Authorization: token,
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 name,
                 pictureURL,
-                productsModels,
+                productModels,
                 dishSizeModels
             }),
         })
@@ -43,7 +46,12 @@ const AddPizza = () => {
     const [arr, setArr] = useState([])
 
     async function fetchDishes(){
-        const response = await axios.get("http://localhost:8080/Product")
+        const response = await axios.get("http://localhost:8080/Product",{
+            headers: {
+                Authorization: token,
+                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+            }
+        })
         setCheckList(response.data)
     }
 
@@ -78,7 +86,7 @@ const AddPizza = () => {
 
     const trendarray = () => {
             arr.map((item) => {
-                productsModels.push(
+                productModels.push(
                     {
                     name : item
                 }

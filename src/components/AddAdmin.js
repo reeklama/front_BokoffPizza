@@ -5,6 +5,8 @@ import {wait} from "@testing-library/user-event/dist/utils";
 
 const AddAdmin = () => {
 
+    let token = localStorage.getItem('token')
+
     const [mail, setMail] = useState('')
     const [but, setBut] = useState('Добавить')
     const roleName = 'ROLE_ADMIN'
@@ -15,7 +17,8 @@ const AddAdmin = () => {
         const response = await fetch('http://localhost:8080/addRole', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
+                Authorization: token,
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 mail,

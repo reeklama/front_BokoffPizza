@@ -1,0 +1,140 @@
+.rectangleCounter {
+    display: flex;
+    border: solid 1px black;
+    justify-content: space-around;
+    width: 102px;
+    height: 50px;
+    background: white;
+    font-family: Bahnschrift, serif;
+    font-size: 17px;
+    text-align: center;
+    padding-top: 15px;
+    position: relative;
+    left: 0px;
+}
+
+.plusminus {
+    background: white;
+    padding-bottom: 12px;
+    color: rgb(144, 144, 144);
+}
+
+.sizes {
+    display: flex;
+    justify-content: space-around;
+    font-family: Bahnschrift, serif;
+}
+
+.container{
+    padding: 2px;
+}
+
+.span {
+    padding-left: 100px;
+    padding-right: 0px;
+    padding-top: 22px;
+    padding-bottom: 0px;
+}
+
+.backbutton {
+    font-size: 17px;
+    color: rgb(0, 0, 0);
+    font-family: Bahnschrift, serif;
+}
+
+.data{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+.span2 {
+    padding-left: 0px;
+    padding-right: 400px;
+    padding-top: 100px;
+}
+
+.countadd {
+    display:flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-around;
+    flex: 1 1 100px;
+    position: absolute;
+    top:300px;
+}
+
+.span3 {
+    padding-left: 890px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+
+}
+
+.name {
+    font-size: 44px;
+    text-align: justify;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    font-family: Bahnschrift, serif;
+}
+
+.cost {
+    text-align: justify;
+    font-size: 28px;
+    color: rgb(144,144,144);
+    font-family: Bahnschrift, serif;
+}
+
+.outer{
+    width: 480px;
+}
+
+.span5 {
+    padding-right: 80px;
+}
+
+.fon_window_center{
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    text-align: center;
+}
+
+.button_add{
+    border: none;
+    background-color: rgb(244,192,93);
+    font-family: Bahnschrift, serif;
+    font-size: 20px;
+    text-align: center;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    position:relative;
+    left: 0px;
+}
+
+.span4 {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 120px;
+    padding-bottom: 0px;
+}
+
+
+.detailed {
+    font-size: 17px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    font-family: Bahnschrift, serif;
+}
+
+.info {
+    font-size: 17px;
+    color: rgb(144,144,144);
+    font-family: Bahnschrift, serif;
+}

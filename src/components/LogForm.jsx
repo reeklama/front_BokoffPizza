@@ -11,7 +11,7 @@ const LogForm = () => {
     async function loginUser(event) {
         event.preventDefault()
 
-        const response = await fetch('http://localhost:8080/api/v1/auth/login', {
+        const response = await fetch('http://localhost:8080/auth/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

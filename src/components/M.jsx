@@ -13,12 +13,8 @@ const M = (props) => {
         dish_id:null
     }])
     async function fetchDishes(){
-        //const response = await axios.get("http://localhost:8080/menu")
-        //setDishes(response.data)
-        setDishes([{"id":4,"name":"Bolognese","pictureURL":"https://avatars.mds.yandex.net/i?id=79c3f73a6cc69ef16eb9da1e1d136f33-5484118-images-thumbs&n=13","products":[],"dishSizeModels":[{"size":"23", "price" : "500"}, {"size":"30", "price" : "600"}, {"size":"35", "price" : "800"}]},
-            {"id":3,"name":"Pizza al Pesto","pictureURL":"https://avatars.mds.yandex.net/i?id=85e2691f393afca87da28231ac92cdfa-5655805-images-thumbs&n=13","products":[],"dishSizeModels":[{"size":"23", "price" : "500"}, {"size":"30", "price" : "600"}, {"size":"35", "price" : "800"}]},
-            {"id":1,"name":"Mexicana","pictureURL":"https://avatars.mds.yandex.net/i?id=a30f499196814f2788948cf8d383cec4-5889050-images-thumbs&n=13","products":[],"dishSizeModels":[{"size":"23", "price" : "500"}, {"size":"30", "price" : "600"}, {"size":"35", "price" : "800"}]},
-            {"id":2,"name":"Margherita","pictureURL":"https://avatars.mds.yandex.net/i?id=0268981cbf5358988f5925166712a87d-4841525-images-thumbs&n=13","products":[{'name':'tomato'}],"dishSizeModels":[{"size":"23", "price" : "500"}, {"size":"30", "price" : "600"}, {"size":"35", "price" : "800"}]}])
+        const response = await axios.get("http://localhost:8080/menu")
+        setDishes(response.data)
     }
 
     useEffect(()=>{
@@ -51,7 +47,7 @@ const M = (props) => {
                 {
                     filteredDishes.map((dish) =>
                         <MPizzaBlock id={dish.id} name={dish.name} pictureURL={dish.pictureURL}
-                                     products={dish.products} dishSizeModels={dish.dishSizeModels} handleAddPizzaToCart2={handleAddPizzaToCart2 }
+                                     products={dish.productModels} dishSizeModels={dish.dishSizeModels} handleAddPizzaToCart2={handleAddPizzaToCart2 }
                                      count='0'/>
                     )
                 }
