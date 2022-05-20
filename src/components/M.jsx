@@ -7,11 +7,11 @@ import {Link} from "react-router-dom";
 
 const M = (props) => {
     const [dishes, setDishes] = useState([])
+    const [filter, setFilter] = useState('')
     const [button, setButton] = useState([{
         isPressed:false,
         dish_id:null
     }])
-
     async function fetchDishes(){
         //const response = await axios.get("http://localhost:8080/menu")
         //setDishes(response.data)
@@ -28,13 +28,19 @@ const M = (props) => {
     const handleAddPizzaToCart2  = (obj, str) => {
         props.handleAddPizzaToCart2(obj, str);
     }
-
+    function filterDishes() {
+        //console.log(typeof dishes)
+        return dishes.filter(dish => dish.name.includes(filter))
+    }
+    const filteredDishes = filterDishes()
+    //console.log(filteredDishes)
     return (
         <div>
 
             <section className="search">
                 <h3 className="search_h">Поиск: </h3>
-                <input type="search" className="search_line" placeholder="Введите название блюда или ингридиент"/>
+                <input type="search" className="search_line" placeholder="Введите название блюда или ингридиент"
+                    onChange={e => setFilter(e.target.value)}/>
             </section>
             <section>
                 <Link to="/shoppingcart">
@@ -43,7 +49,7 @@ const M = (props) => {
             </section>
             <section className="products">
                 {
-                    dishes.map((dish) =>
+                    filteredDishes.map((dish) =>
                         <MPizzaBlock id={dish.id} name={dish.name} pictureURL={dish.pictureURL}
                                      products={dish.products} dishSizeModels={dish.dishSizeModels} handleAddPizzaToCart2={handleAddPizzaToCart2 }
                                      count='0'/>
