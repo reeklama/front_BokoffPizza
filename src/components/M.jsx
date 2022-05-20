@@ -45,7 +45,7 @@ const M = (props) => {
                 {
                     dishes.map((dish) =>
                         <MPizzaBlock id={dish.id} name={dish.name} pictureURL={dish.pictureURL}
-                                     price={dish.products} dishSizeModels={dish.dishSizeModels} handleAddPizzaToCart2={handleAddPizzaToCart2 }
+                                     products={dish.products} dishSizeModels={dish.dishSizeModels} handleAddPizzaToCart2={handleAddPizzaToCart2 }
                                      count='0'/>
                     )
                 }

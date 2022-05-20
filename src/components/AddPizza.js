@@ -14,11 +14,11 @@ const AddPizza = () => {
     async function addNewPizza(event) {
 
         setSize(sizeprice())
-
+        setProd(trendarray())
 
         event.preventDefault()
 
-        const response = await fetch('http://localhost:8080/api/v1/registration', {
+        const response = await fetch("http://localhost:8080/menu", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -40,6 +40,7 @@ const AddPizza = () => {
 
 
     const [checkList, setCheckList] = useState([])
+    const [arr, setArr] = useState([])
 
     async function fetchDishes(){
         const response = await axios.get("http://localhost:8080/Product")
@@ -51,34 +52,54 @@ const AddPizza = () => {
     }, [])
 
     const handleCheck = (event) => {
-        var updatedList = [...productsModels];
+        var updatedList = [...arr];
         if (event.target.checked) {
-            updatedList = [...productsModels, event.target.value];
+            updatedList = [...arr, event.target.value];
         } else {
-            updatedList.splice(productsModels.indexOf(event.target.value), 1);
+            updatedList.splice(arr.indexOf(event.target.value), 1);
         }
-        setProd(updatedList);
+        setArr(updatedList);
     };
 
-    const checkedItems = productsModels.length
-        ? productsModels.reduce((total, item) => {
+    const checkedItems = arr.length
+        ? arr.reduce((total, item) => {
             return total + ", " + item;
         })
         : "";
 
     var isChecked = (item) =>
-        productsModels.includes(item) ? "checked-item" : "not-checked-item";
+        arr.includes(item) ? "checked-item" : "not-checked-item";
 
 
-    const [price23, setPrice23] = useState('');
-    const [price30, setPrice30] = useState('');
-    const [price35, setPrice35] = useState('');
+    const [price23, setPrice23] = useState(0);
+    const [price30, setPrice30] = useState(0);
+    const [price35, setPrice35] = useState(0);
+
+
+    const trendarray = () => {
+            arr.map((item) => {
+                productsModels.push(
+                    {
+                    name : item
+                }
+                )
+            })
+    }
 
     const sizeprice = () => {
         return (
-            '{"size":"23", "price":"' + {price23} + '"}, ' +
-            '{"size":"30", "price":"' + {price30} + '"},' +
-            '{"size":"35", "price":"' + {price35} + '"}'
+            dishSizeModels.push({
+                    "size" : '23',
+                    "price" : price23
+                },
+                {
+                    "size" : '30',
+                    "price" : price30
+                },
+                {
+                    "size" : '36',
+                    "price" : price35
+                })
         )
     }
 
