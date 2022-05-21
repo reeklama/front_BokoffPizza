@@ -49,7 +49,7 @@ const AddPizza = () => {
         const response = await axios.get("http://localhost:8080/Product",{
             headers: {
                 Authorization: token,
-                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+                'Content-Type': 'application/json'
             }
         })
         setCheckList(response.data)

@@ -25,10 +25,13 @@ const RegForm = () => {
             }),
         })
 
-        const data = await response.json()
+        const data = response.status
 
-        if (data.status === 'ok') {
-            history.push('/')
+        if (data === 200) {
+            alert('Registration successful')
+            window.location.href = '/login'
+        } else {
+            alert('Некорректные данные')
         }
     }
 
