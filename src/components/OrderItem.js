@@ -3,7 +3,6 @@ import '../style/userpage.css';
 
 const OrderItem = (props) => {
     let date = new Date(props.order.order_date)
-    console.log(date)
     return (
         <div className="order">
             <p className="order-text order-text-date">

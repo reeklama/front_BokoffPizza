@@ -26,7 +26,6 @@ const M = (props) => {
         props.handleAddPizzaToCart2(obj, str);
     }
     function filterDishes() {
-        //console.log(typeof dishes)
         return dishes.filter(dish => {
             //console.log(dish)
             let res = false
