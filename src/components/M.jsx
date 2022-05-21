@@ -15,6 +15,7 @@ const M = (props) => {
     async function fetchDishes(){
         const response = await axios.get("http://localhost:8080/menu")
         setDishes(response.data)
+
     }
 
     useEffect(()=>{

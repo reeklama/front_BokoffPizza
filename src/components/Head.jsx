@@ -14,6 +14,7 @@ const Head = (props) => {
         localStorage.removeItem('auth')
         localStorage.setItem('auth', false)
         localStorage.removeItem('email')
+        localStorage.removeItem('token')
     }
 
 
