@@ -27,7 +27,14 @@ const M = (props) => {
     }
     function filterDishes() {
         //console.log(typeof dishes)
-        return dishes.filter(dish => dish.name.includes(filter))
+        return dishes.filter(dish => {
+            //console.log(dish)
+            let res = false
+            for (const d of dish.productModels) {
+                res ||= d.name.includes(filter)
+            }
+            return dish.name.includes(filter) || res
+        })
     }
     const filteredDishes = filterDishes()
     //console.log(filteredDishes)
