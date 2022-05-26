@@ -2,28 +2,43 @@ import React, {useState} from 'react';
 import '../style/userpage.css';
 
 const ChangePasswordForm = () => {
+    const [oldPassword, setOldPassword] = useState('')
     const [password, setPassword] = useState('')
+    const [passwordConfirm, setPasswordConfirm] = useState('')
 
     async function setChangedPassword() {
-        // const response = await fetch('http://localhost:8080/cabinet', {
-        //     method: 'POST',
-        //     headers: {
-        //         Authorization: token
-        //     },
-        //     body: {
-        //         password: password
-        //     }
-        // })
-        // console.log(response)
+        let token = localStorage.getItem('token')
+        let request_body = {
+            oldPassword : oldPassword,
+            newPassword: password,
+            newPasswordConfirm : passwordConfirm
+        }
+        console.log(JSON.stringify(request_body))
+        const response = await fetch('http://localhost:8080/changepass', {
+            method: 'POST',
+            headers: {
+                Authorization: token
+            },
+            body: JSON.stringify(request_body)
+        })
+
+        console.log(response)
     }
 
     return (
-        <form onSubmit={setChangedPassword}>
+        <form onSubmit={(e) => {
+            setChangedPassword()
+            e.preventDefault()
+        }}>
             <div className="fon_window">
                 <div className="container_inner">
                     <p className="font_inner">Пароль:</p>
+                    <input className="field_inner" type="password" size="16" placeholder="Old password" value={oldPassword}
+                           onChange={(e) => setOldPassword(e.target.value)}></input>
                     <input className="field_inner" type="password" size="16" placeholder="Password" value={password}
                            onChange={(e) => setPassword(e.target.value)}></input>
+                    <input className="field_inner" type="password" size="16" placeholder="Confirm password" value={passwordConfirm}
+                           onChange={(e) => setPasswordConfirm(e.target.value)}></input>
                 </div>
                 {/*<div className="container_inner">
                     <p className="font_inner">Повторите пароль:</p>
