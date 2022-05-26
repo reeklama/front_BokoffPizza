@@ -19,16 +19,18 @@ const ToAdminBlock = () => {
     let jsonJWT = parseJwt(token)
     console.log(jsonJWT)
 
-    function hasSystemAdminPrivileges(jsonJWT) {
-        return true
+    function hasSystemAdminPrivileges() {
+        let jsonJWT = parseJwt(token)
+        return jsonJWT.roles.includes('ROLE_SYSADMIN')
     }
-    function hasEngineeringPrivileges(jsonJWT) {
-        return true
+    function hasEngineeringPrivileges() {
+        let jsonJWT = parseJwt(token)
+        return jsonJWT.roles.includes('ROLE_MODERATOR')
     }
     return (
         <div className="admins-container">
             {hasSystemAdminPrivileges(parseJwt(token)) &&
-                <Link to="/admin" className="userpage-link">
+                <Link to="/admin" className="userpage-link"> //TODO: change link here
                     <img src={systemAdmin} width="65" height="65" alt=""/>
                     <div className="admin-text">
                         Войти как системный администратор
@@ -37,7 +39,7 @@ const ToAdminBlock = () => {
 
             }
             {hasEngineeringPrivileges(parseJwt(token)) &&
-                <Link to="/admin" className="userpage-link">
+                <Link to="/admin" className="userpage-link">  //TODO: or here
                     <img src={admin} width="65" height="65" alt=""/>
                     <div className="admin-text">
                         <p>Войти как прикладной администратор</p>
