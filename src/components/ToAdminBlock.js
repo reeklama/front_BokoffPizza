@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import userCab from "../resources/img/user.svg";
 import admin from "../resources/img/admin.png";
 import systemAdmin from "../resources/img/system_admin.png";
 
@@ -17,8 +16,8 @@ const ToAdminBlock = () => {
         return JSON.parse(jsonPayload);
     }
 
-    // let jsonJWT = parseJwt(token)
-    // console.log(jsonJWT)
+    let jsonJWT = parseJwt(token)
+    console.log(jsonJWT)
 
     function hasSystemAdminPrivileges(jsonJWT) {
         return true

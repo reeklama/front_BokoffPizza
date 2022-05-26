@@ -83,3 +83,30 @@
 	font-size: 20px;
 	text-align: center;
 }
+
+.zoomable-pic {
+    padding: 0;
+    border: 0;
+    background: none;
+    position: relative;
+}
+.zoomable-pic:after {
+    position: absolute;
+    content: ' ';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: url(../resources/img/star.svg);
+    opacity: 0;
+    width: 50px;
+    height: 50px;
+    transition: opacity .2s;
+}
+.zoomable-pic:hover:after {
+    opacity: 1;
+}
+
+.zoomable-pic__image {
+    display: block;
+}

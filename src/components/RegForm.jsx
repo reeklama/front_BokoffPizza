@@ -24,7 +24,7 @@ const RegForm = () => {
                 passwordConfirm,
             }),
         })
-
+        console.log(response)
         const data = response.status
 
         if (data === 200) {

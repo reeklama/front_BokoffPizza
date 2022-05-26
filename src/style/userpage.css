@@ -126,3 +126,27 @@ h-line {
 	text-decoration: underline;
 	color: black;
 }
+
+.container_inner{
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+	justify-content: center;
+	padding: 2px;
+	padding-top: 20px;
+}
+
+.font_inner{
+	font-family: Bahnschrift, serif;
+	font-size: 24px;
+	text-align: center;
+}
+
+.field_inner{
+	border: 2px rgb(246,241,231);
+	background-color: rgb(246,241,231);
+	font-family: Bahnschrift, serif;
+	font-size: 20px;
+	text-align: center;
+	margin-left: 10px;
+}
