@@ -1,39 +1,35 @@
 import React from 'react';
 import trash from '../resources/img/trash.png';
 import image from '../resources/img/pizza.jpg';
-import '../style/userpage.css';
+import CounterButton from "./CounterButton";
 
-const Block   = (props) => {
+const Block = (props) => {
+
+    console.log(props);
+
+    const getSize = () => {
+
+    };
 
     return (
         <>
             <div className="block">
-                <img src={image} width="117" height="121" alt="Пример"/>
-                <p className="product-name">Сосиска в тесте</p>
-
-                {/*<ul>*/}
-                {/*    <a href="">*/}
-                {/*        <input type="radio" name="radio" id="radio1" checked/>*/}
-                {/*        <label2 htmlFor="radio1">23 см</label2>*/}
-                {/*    </a>*/}
-                {/*    <a href="">*/}
-                {/*        <input type="radio" name="radio" id="radio2"/>*/}
-                {/*        <label2 htmlFor="radio2">30 см</label2>*/}
-                {/*    </a>*/}
-                {/*    <a href="">*/}
-                {/*        <input type="radio" name="radio" id="radio3"/>*/}
-                {/*        <label2 htmlFor="radio3">36 см</label2>*/}
-                {/*    </a>*/}
-                {/*</ul>*/}
-                <div className="number" data-step="1" data-min="1" data-max="100">
-                    <input className="number-text" type="text" name="count" value="1"/>
-                    <a href="#" className="number-minus">−</a>
-                    <a href="#" className="number-plus">+</a>
+                <img src={props.obj.obj.pictureURL} width="150" height="100" alt="Пример"/>
+                <div className="namesize">
+                    <p className="product-name">{ props.obj.obj.name }</p>
+                    <p className="costCart">{getSize}</p>
+                    {/*<p className="costCart">3</p>*/}
                 </div>
-                <p className="priseonshopcart">0 ₽</p>
-                <a href="sample.html"><img src={trash} width="20" height="20" align="left"/></a>
+                <CounterButton/>
+                {/*<p className="priseonshopcart">{*/}
+                {/*    props.obj.dishSizeModels.map((post) =>*/}
+                {/*        <div>*/}
+                {/*            {post.price}  </div> )*/}
+                {/*}</p>*/}
+                <p className="priseonshopcart">3</p>
+                <img src={trash} width="20" height="20" align="left"/>
             </div>
-            <hr  width="550px" color="black" />
+            <hr style ={{borderTop: "2px solid black",  width: '560px', marginLeft: '190px'}} />
         </>
     );
 };

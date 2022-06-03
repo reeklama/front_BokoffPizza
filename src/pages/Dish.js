@@ -4,7 +4,14 @@ import Backbutton from "../components/Backbutton";
 import ImagePizza from "../components/ImagePizza";
 import {useLocation} from "react-router-dom";
 
-const Dish = () => {
+const Dish = (props) => {
+
+    const handleAddPizzaToCart = (obj) => {
+        props.handleAddPizzaToCart(obj);
+    }
+
+    const getSize = () => {
+    };
 
     const location = useLocation()
     const { obj } = location.state
@@ -13,7 +20,8 @@ const Dish = () => {
         <div>
             <Head/>
             <Backbutton/>
-            <ImagePizza obj={obj}/>
+            {<ImagePizza obj={obj} handleAddPizzaToCart={handleAddPizzaToCart} getSize = {getSize}/>}
+            <ImagePizza obj={ obj }/>
         </div>
     );
 };

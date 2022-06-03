@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import userCab from "../resources/img/user.svg";
 import admin from "../resources/img/admin.png";
 import systemAdmin from "../resources/img/system_admin.png";
 
@@ -30,7 +31,7 @@ const ToAdminBlock = () => {
     return (
         <div className="admins-container">
             {hasSystemAdminPrivileges(parseJwt(token)) &&
-                <Link to="/admin" className="userpage-link"> //TODO: change link here
+                <Link to="/sysadmin" className="userpage-link">
                     <img src={systemAdmin} width="65" height="65" alt=""/>
                     <div className="admin-text">
                         Войти как системный администратор
@@ -39,7 +40,7 @@ const ToAdminBlock = () => {
 
             }
             {hasEngineeringPrivileges(parseJwt(token)) &&
-                <Link to="/admin" className="userpage-link">  //TODO: or here
+                <Link to="/admin" className="userpage-link">
                     <img src={admin} width="65" height="65" alt=""/>
                     <div className="admin-text">
                         <p>Войти как прикладной администратор</p>

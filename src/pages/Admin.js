@@ -3,6 +3,7 @@ import HeadMain from "../components/Head";
 import AddAdmin from "../components/AddAdmin";
 import AddIngredient from "../components/AddIngredient";
 import AddPizza from "../components/AddPizza";
+import ChangePizza from "../components/ChangePizza";
 
 const Admin = () => {
     return (
@@ -10,11 +11,10 @@ const Admin = () => {
             <HeadMain/>
             <div className="adminPage">
                 <div className="addAdmIng">
-                    <AddAdmin/>
-                    <br />
                     <AddIngredient/>
+                    <AddPizza/>
                 </div>
-                <AddPizza/>
+                <ChangePizza />
             </div>
         </>
     );

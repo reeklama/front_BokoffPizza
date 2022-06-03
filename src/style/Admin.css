@@ -126,6 +126,19 @@
     background: rgba(144,144,144, 10%);
 }
 
+.ingList.open {
+    width: 1px;
+    height: 1px;
+}
+
+.ingList1 {
+    overflow-y: scroll;
+    width: 700px;
+    height: 598px;
+    background: rgba(144,144,144, 10%);
+}
+
+
 .list-container-ing {
     display: flex;
     flex-direction: column;
@@ -134,6 +147,9 @@
     font-family: Bahnschrift, serif;
     font-size: 20px;
 }
+
+
+
 .checked-item,
 .not-checked-item {
     margin-left: 10px;

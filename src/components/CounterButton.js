@@ -16,7 +16,7 @@ const CounterButton = function () {
     return (
         <div className="rectangleCounter">
             <button className="plusminus" onClick={decrement}>-</button>
-            <h1>{count}</h1>
+            <>{count}</>
             <button className="plusminus" onClick={increment}>+</button>
         </div>
     );

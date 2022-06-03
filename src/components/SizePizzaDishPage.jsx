@@ -1,9 +1,14 @@
 import React, {useRef, useState} from 'react';
+import '../style/Dish.css';
 
 const SizePizzaDishPage = (props) => {
 
     const [size, setSize] = useState(props);
     console.log(size);
+
+    const getSize = (value) => {
+        return value;
+    }
 
     return (
         <div className="sizes">
@@ -11,7 +16,6 @@ const SizePizzaDishPage = (props) => {
                 type="radio"
                 value="23"
                 name="size"
-
                 onChange={(e) => setSize(e.target.value)}
             />
             23

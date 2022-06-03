@@ -12,6 +12,23 @@ const AddPizza = () => {
     const [productModels, setProd] = useState([])
     const [dishSizeModels, setSize] = useState([])
 
+    const [dishes, setDishes] = useState([])
+    const [open, setOpen] = React.useState(false);
+
+    async function fetchDishes(){
+        const response = await axios.get("http://localhost:8080/menu")
+        setDishes(response.data)
+
+    }
+
+    function viewpizzas(dish) {
+        console.log(dish);
+        setName(dish.name);
+
+
+
+    }
+
 
     async function addNewPizza(event) {
 
@@ -45,8 +62,8 @@ const AddPizza = () => {
     const [checkList, setCheckList] = useState([])
     const [arr, setArr] = useState([])
 
-    async function fetchDishes(){
-        const response = await axios.get("http://localhost:8080/Product",{
+    async function fetchProduct(){
+        const response = await axios.get("http://localhost:8080/product",{
             headers: {
                 Authorization: token,
                 'Content-Type': 'application/json'
@@ -57,6 +74,7 @@ const AddPizza = () => {
 
     useEffect(()=>{
         fetchDishes()
+        fetchProduct()
     }, [])
 
     const handleCheck = (event) => {
@@ -111,12 +129,15 @@ const AddPizza = () => {
         )
     }
 
+
+
+
+
     return (
         <div className="rectanglePiz">
-            <p>Добавление пиццы</p>
-            <br />
             <section>
                 <form onSubmit={addNewPizza}>
+                    <p>Добавление пиццы</p>
                 <div className="addPizza">
                     Название
                     <div className="container_inner5">

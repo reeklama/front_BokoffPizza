@@ -13,7 +13,7 @@ const AddIngredient = () => {
     async function addIngr(event) {
         event.preventDefault()
 
-        const response = await fetch('http://localhost:8080/Product', {
+        const response = await fetch('http://localhost:8080/product', {
             method: 'POST',
             headers: {
                 Authorization: token,

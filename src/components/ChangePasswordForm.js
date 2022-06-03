@@ -14,10 +14,11 @@ const ChangePasswordForm = () => {
             newPasswordConfirm : passwordConfirm
         }
         console.log(JSON.stringify(request_body))
-        const response = await fetch('http://localhost:8080/changepass', {
-            method: 'POST',
+        const response = await fetch('http://localhost:8080/cabinet/changepass', {
+            method: 'PUT',
             headers: {
-                Authorization: token
+                Authorization: token,
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify(request_body)
         })
