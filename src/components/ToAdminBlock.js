@@ -22,11 +22,11 @@ const ToAdminBlock = () => {
 
     function hasSystemAdminPrivileges() {
         let jsonJWT = parseJwt(token)
-        return jsonJWT.roles.includes('ROLE_SYSADMIN')
+        return jsonJWT.role.includes('ROLE_SYSADMIN')
     }
     function hasEngineeringPrivileges() {
         let jsonJWT = parseJwt(token)
-        return jsonJWT.roles.includes('ROLE_MODERATOR')
+        return jsonJWT.role.includes('ROLE_MODERATOR')
     }
     return (
         <div className="admins-container">

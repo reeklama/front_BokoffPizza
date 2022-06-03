@@ -10,13 +10,26 @@ const AddAdmin = () => {
 
     const [mail, setMail] = useState('')
     const [but, setBut] = useState('Добавить')
-    const roleName = 'ROLE_ADMIN'
+    const [roleName, setRole] = useState('')
+
+    function addAdmin(event){
+        setRole('ROLE_SYSADMIN')
+        setAdmin(event)
+    }
+
+    function addModerator(event){
+        setRole('ROLE_MODERATOR')
+        setAdmin(event)
+    }
+
 
     async function setAdmin(event) {
+
         event.preventDefault()
 
-        const response = await fetch('http://localhost:8080/addRole', {
+        const response = await fetch('http://localhost:8080/role', {
             method: 'POST',
+            mode: 'cors',
             headers: {
                 Authorization: token,
                 'Content-Type': 'application/json'
@@ -37,33 +50,12 @@ const AddAdmin = () => {
         }
     }
 
-    async function delAdmin(event) {
-        event.preventDefault()
-
-        const response = await fetch('http://localhost:8080/addRole', {
-            method: 'POST',
-            headers: {
-                Authorization: token,
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                mail,
-                roleName
-            }),
-        })
-
-        const data = await response.json()
-
-        if (data.status === 'Роль удалена') {
-
-        }
-    }
 
     return (
         <>
             <div class="rectangle">
 
-                <form onSubmit={setAdmin}>
+                <form onSubmit={addAdmin}>
                     <>Добавление администратора</>
                 <div className="container_inner4">
                     <p className="font_inner4"></p>
@@ -78,21 +70,24 @@ const AddAdmin = () => {
                 </form>
             </div>
 
+
             <div className="rectangle">
-                Удаление администратора
-                <form onSubmit={delAdmin}>
+
+                <form onSubmit={addModerator}>
+                    <>Добавление модератора</>
                     <div className="container_inner4">
                         <p className="font_inner4"></p>
                         <input className="field_inner4" type="text" size="10" placeholder="Почта"
                                value={mail} onChange={(e) => setMail(e.target.value)}/>
                     </div>
-                    <div >
+                    <div>
                         <button className="addButton" type="submit">
-                            Удалить
+                            {but}
                         </button>
                     </div>
                 </form>
             </div>
+
 
         </>
 

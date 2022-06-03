@@ -17,7 +17,7 @@ const MPizzaBlock = (props) => {
     async function addToFavorites() {
         let token = localStorage.getItem('token')
         let name = obj.name
-        alert('Вы попытались добавить пиццу ' + obj.name + ' ' + obj.id)
+        alert('Вы добавили пиццу в избранное: ' + obj.name)
         const response = await fetch('http://localhost:8080/favorites', {
             method: 'POST',
             headers: {

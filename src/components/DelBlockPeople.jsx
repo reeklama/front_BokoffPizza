@@ -62,7 +62,6 @@ const DelBlockAdmin = () => {
         })
 
         const data = await response.json()
-
         if (data.status === 'Пользователи удалены') {
 
         }
@@ -84,7 +83,6 @@ const DelBlockAdmin = () => {
         })
 
         const data = await response.json()
-
         if (data.status === 'Пользователи заблокированы') {
 
         }
